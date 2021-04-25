@@ -20,7 +20,7 @@
 </head>
 <body id="wagtail" class="{% block bodyclass %}{% endblock %} {% if messages %}has-messages{% endif %} focus-outline-on">
     <div data-sprite></div>
-    <script>
+    <script nonce="{{request.csp_nonce}}">
         function loadIconSprite() {
             var spriteURL = '{% url "wagtailadmin_sprite" %}';
             var revisionKey = 'wagtail:spriteRevision';
