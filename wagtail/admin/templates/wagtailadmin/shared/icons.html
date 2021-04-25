@@ -1,5 +1,10 @@
 {% spaceless %}
-<div style="display: none">
+<style nonce="{{request.csp_nonce}}">
+    .display_none {
+        display:none
+    }
+</style>
+<div class="display_none">
   <svg>
       <defs>
         {% for icon in icons %}

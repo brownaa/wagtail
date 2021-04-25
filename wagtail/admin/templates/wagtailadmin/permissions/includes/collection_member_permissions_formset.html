@@ -1,4 +1,9 @@
 {% load i18n wagtailadmin_tags %}
+<style nonce="{{request.csp_nonce}}">
+    .display_none {
+        display:none
+    }
+</style>
 <h2>{% block title %}{% endblock %}</h2>
 
 {{ formset.management_form }}
@@ -28,7 +33,7 @@
     </thead>
     <tbody id="id_{{ formset.prefix }}-FORMS">
         {% for form in formset.forms %}
-            <tr id="inline_child_{{ form.prefix }}"{% if form.DELETE.value %} style="display: none;"{% endif %}>
+            <tr id="inline_child_{{ form.prefix }}"{% if form.DELETE.value %} class="display_none"{% endif %}>
                 {% if form.non_field_errors %}
                     <p class="error-message">
                         {% for error in form.non_field_errors %}

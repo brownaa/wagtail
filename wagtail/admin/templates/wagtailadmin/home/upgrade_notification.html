@@ -1,5 +1,11 @@
 {% load wagtailcore_tags %}
 
-<div data-upgrade data-wagtail-version="{% wagtail_version %}" class="panel nice-padding panel-upgrade-notification" style="display:none">
+<style nonce="{{request.csp_nonce}}">
+    .display_none {
+        display:none
+    }
+</style>
+
+<div data-upgrade data-wagtail-version="{% wagtail_version %}" class="panel nice-padding panel-upgrade-notification display_none">
     <div class="help-block help-warning">Wagtail upgrade available. Your version: <strong>{% wagtail_version %}</strong>. New version: <strong data-upgrade-version></strong>. <a data-upgrade-link href="">Read the release notes.</a></div>
 </div>
